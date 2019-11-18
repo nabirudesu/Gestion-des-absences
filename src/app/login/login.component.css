@@ -1,0 +1,131 @@
+@keyframes shadows{
+    from{box-shadow: black 0px 0px 10px 2px;}
+    to{box-shadow: transparent 0px 0px 120px 2px;}
+}
+
+
+.form{
+    width: 340px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+   
+    border-radius: 20px;
+    border-width: 1rem;
+    background-color: transparent;
+    
+    
+    margin: 50px auto;
+  
+   
+}
+
+.name{
+    width: 100%;
+   margin-top: 1rem;
+   padding: 10px;
+   max-lines: 3;
+}
+#background {
+    background-image: url(../../../Pictures/coffee-notebook-writing-computer-34601.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 130%;
+
+    height: 130%;
+    overflow-x: hidden;
+    position: absolute;
+    top: -2.5%;
+    left: -2.5%;
+   
+    z-index: -1;
+    
+    
+
+    /* START */
+    /* START */
+    /* START */
+    /* START */
+
+    /* You can adjust the blur-radius as you'd like */
+    filter: blur(5px);
+  
+    
+}
+.input-form {
+border-radius: 40px;
+padding: 0.45rem;
+margin-bottom: 0rem;
+
+width: 59%;
+
+border: none;
+transition: all 250ms ease-in-out;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+}
+.input-form:hover {
+    border-radius: 40px;
+    padding: 0.45rem;
+   
+    width: 59%;
+    border: none;
+    animation-name: shadows;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    }
+.art{
+width: 70%;
+border-radius: 16px;
+box-shadow: black 0px 0px 15px 2px;
+background-color: white;
+margin: 2rem -1rem auto;
+padding: 0.8em 1.2rem;
+
+}    
+.input-form:focus {
+        border-radius: 40px;
+        padding: 0.6rem;
+       
+        width: 59%;
+        border: none;
+        box-shadow: black 0px 0px 15px 2px;
+        margin: -0.15rem auto;
+        
+    
+}
+.title1{
+    margin-top: -0.4rem;
+    margin-bottom: 1rem
+   }
+.title2{
+    margin-top: -1.2rem;
+    margin-bottom: 1rem
+}
+
+.but-login{
+   
+    background-color:rgb(255, 255, 255);
+    padding: 0.45rem 0.9rem ;
+    border-radius: 1rem;
+    border: none;
+    transition: all 250ms ease-in-out;
+    margin: 1rem 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+   
+
+}
+.but-login:hover{
+    margin: 0.95rem 0.4rem;
+    background-color:rgb(255, 255, 255);
+    
+    padding: 0.5rem 1rem ;
+    border-radius: 1rem;
+  
+    
+    box-shadow: rgb(0, 0, 0) 2px 2px 35px 2px;
+
+}
