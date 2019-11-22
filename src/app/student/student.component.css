@@ -15,15 +15,7 @@
     left: -2.5%;
    
     z-index: -1;
-    
-    
 
-    /* START */
-    /* START */
-    /* START */
-    /* START */
-
-    /* You can adjust the blur-radius as you'd like */
     filter: blur(5px);
   
     
@@ -121,6 +113,22 @@ padding-left: 3.5rem ;
    
 
 }
+.select{
+    text-align: center;
+    padding: .5rem 5rem;
+
+    width: 40%;
+    border-radius: 3px;
+    border: none;
+    transition: all 250ms ease-in-out;
+   
+}
+.select:hover{
+    box-shadow: rgb(0, 0, 0) 0px 0px 15px 2px;
+}
+.select:focus{
+    box-shadow: rgb(0, 0, 0) 0px 0px 15px 2px;
+}
 .but-login:hover{
     margin: 0.95rem 0.4rem;
     background-color:rgb(255, 255, 255);
@@ -137,6 +145,8 @@ text-align: center;
 }
 .form-container{
     width : 50%;
+    margin-top: 1rem ;
+    text-align: center;
     
     
 }

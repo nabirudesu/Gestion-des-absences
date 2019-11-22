@@ -1,3 +1,4 @@
+import { names } from './../names';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,7 +12,12 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
+
+
+
+
+const AppRoutes: Routes = [
+  { path: '', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'student',      component: StudentComponent },
   { path: 'teacher',      component: TeacherComponent },
@@ -19,7 +25,6 @@ const appRoutes: Routes = [
   
   
 ];
-
 
 
 @NgModule({
@@ -35,8 +40,11 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    
+   
     RouterModule.forRoot(
-      appRoutes,
+     
+      AppRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],

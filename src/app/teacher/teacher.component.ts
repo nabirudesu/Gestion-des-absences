@@ -20,8 +20,9 @@ export class TeacherComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(stud : Student) : void  {
+  onSelect(stud : Student) : boolean  {
     this.selectedstudent = stud ;
+    return true;
 
   }
   
