@@ -113,12 +113,12 @@ padding-left: 3.5rem ;
    
 
 }
-.select{
+.cus-select{
     text-align: center;
-    padding: .5rem 5rem;
+    padding: .5rem 1rem;
 
     width: 40%;
-    border-radius: 3px;
+    border-radius: 20px;
     border: none;
     transition: all 250ms ease-in-out;
    
