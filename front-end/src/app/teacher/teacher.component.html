@@ -6,7 +6,7 @@
   <li *ngFor="let student of STUDENTS"
     [class.selected]="student === selectedstudent"
     (click)="onSelect(student)">
-    <div class="fullname">{{student.name | uppercase}} {{student.surname}}</div> <div> Group &nbsp;: {{student.group}}</div>
+    <div class="fullname">{{student.fullName| uppercase}}</div> 
   </li>
 </ul>
 </div>
@@ -14,15 +14,15 @@
 <div class="title2"><b>Details</b></div>
 <div class="justification-view">
 <div class="details-view">
-  <div class="fullname2">{{selectedstudent.name | uppercase}} {{selectedstudent.surname}}</div>
-  <div class="fullname2"><span>group&nbsp; :</span>&nbsp;&nbsp;  &nbsp;{{selectedstudent.group}}</div>
+  <div class="fullname2">{{selectedstudent.fullName| uppercase}}</div>  
 </div>
 <div >
-  <div class="span-view"><span >Justification:</span></div><textarea  class="justification-text" readonly="readonly">{{selectedstudent.justification}}</textarea>
+  <div class="span-view"><span >Justification:</span></div><textarea  class="justification-text" readonly="readonly">{{selectedjustification.cause}}</textarea>
+  <div class="img-container"><img  class="justimage" src={{selectedjustification.image}}></div>
 </div>
 
 </div>
-<div class="button-log"><button class="but-login"><b><a>confirm</a></b></button><button class="but-login"><b>Delete</b></button></div>
+<div class="button-log"><button class="but-login" (click)="OnConfirm()"><b><a>confirm</a></b></button><button class="but-login" (click)="OnDelete()"><b>Delete</b></button></div>
 </div>
 
 </div>

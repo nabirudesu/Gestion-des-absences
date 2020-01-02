@@ -5,18 +5,16 @@
     <div class="img-container"><img class="art" src="../../assets/ESI-logo.svg"></div>
     <div class="form-container"> 
         
-    <div class="name">  <h5 class="title2">Group</h5>     <input class="input-form"  [(ngModel)]="Groupe" placeholder="Enter your group"/></div>  
+      
     <div class="name" >
             <h5 class="title2">Module</h5> 
-    <select class="cus-select"   placeholder="Choose module" ng-option="Names" [(ngModel)]="Modul" >
-    <option>Maths</option>    
-    <option>Science</option>    
-    <option>IGL</option>    
+    <select class="cus-select"   placeholder="Choose module" [(ngModel)]="Teacher" >   
+        <option *ngFor="let teacher of Teachers" [ngValue]="teacher.fullName">{{teacher.fullName}}</option> 
     </select>
-    
     </div> 
-    <div class="name">  <h5 class="title2">Justification</h5>     <textarea class="text-form" [(ngModel)]="justific"  placeholder="your Jutification"></textarea></div> 
-    <div class="button-log"><button class="but-login"><b><a>Sent</a></b></button><button class="but-login"><b>Import</b></button></div>
+    <div class="name">  <h5 class="title2">Justification</h5>     <textarea class="text-form" [(ngModel)]="Cause"  placeholder="your Jutification"></textarea></div> 
+    <div class="button-log"><input class="but-login" type="file" (change)="onFileChanged($event)" ></div>
+     
+    <div class="button-log"><button class="but-login" (click)="onSentClick()"><b>Sent</b></button></div>
     </div>
-    
 </div>  
