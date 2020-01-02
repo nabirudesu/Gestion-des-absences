@@ -1,41 +1,38 @@
-
 from django.db import models
+from django.utils.timezone import now
 
-
-# Create your models here.
 
 class Teacher(models.Model):
 
-    id = models.AutoField(primary_key=True, unique=True)
+    username = models.CharField(max_length=255 , default="")
     email = models.EmailField()
-    password = models.CharField(max_length=255)
-    fullName = models.CharField(max_length=255)
+    fullName = models.CharField(max_length=255, default="")
 
     def __str__(self):
-        return str(self.id)
+        return self.fullName
     
-
-
 
 class Student(models.Model):
-    id = models.AutoField(primary_key=True, unique=True)
-    teacher =  models.ForeignKey(Teacher,  on_delete=models.DO_NOTHING)
-    email = models.EmailField()
-    password = models.CharField(max_length=255)
-    fullName = models.CharField(max_length=255)
+  
+    username = models.CharField(max_length=255,default="")
+    email = models.EmailField()    
+    absences = models.IntegerField(default=0 )
+    fullName = models.CharField(max_length=255,default="")
+
 
     def __str__(self):
-        return str(self.id)
+        return self.fullName
+
+def upload_path(instance , filename):
+    return '/'.join(['justifications',str(instance.teacher.fullName) , filename])
     
-
-
-
 class Justification(models.Model):
-    id = models.AutoField(primary_key=True, unique=True)
+   
     student = models.ForeignKey(Student, on_delete = models.DO_NOTHING)
-    cause = models.CharField(max_length=255)
-    date = models.DateField()
-    image = models.ImageField(upload_to="img", default="")
+    teacher = models.ForeignKey(Teacher, on_delete = models.DO_NOTHING, default='---')
+    cause = models.CharField(max_length=1000 , default='')
+    date = models.DateTimeField(default=now, editable=False)
+    image = models.ImageField(upload_to=upload_path, blank=True , null=True , default='')
 
     def __str__(self):
         return str(self.id)
@@ -43,9 +40,3 @@ class Justification(models.Model):
 
 
     
-
-
-
-
-
-

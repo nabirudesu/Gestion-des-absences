@@ -1,14 +1,19 @@
 from django.urls import include, path
 from rest_framework import routers
 from . import views
-
+from rest_framework.authtoken.views import ObtainAuthToken
+from django.conf.urls.static import static
+from django.conf import settings
 
 router = routers.DefaultRouter()
-router.register(r'Teacher', views.TeacherViewSet)
-router.register(r'Student' , views.StudentViewSet)
-router.register(r'Justification' , views.JustificationViewSet)
+router.register('User', views.UserViewSet)
+router.register('Teacher', views.TeacherViewSet)
+router.register('Student' , views.StudentViewSet)
+router.register('Justification' , views.JustificationViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('auth/', ObtainAuthToken.as_view()),
+
+    path('api/', include(router.urls)),
 ]
+urlpatterns += static( settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
