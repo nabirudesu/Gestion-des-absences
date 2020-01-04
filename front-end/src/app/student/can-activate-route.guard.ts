@@ -24,9 +24,10 @@ export class CanActivateRouteGuard implements CanActivate {
   }
   
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    
       
       
-      return (( localStorage.getItem("user") !== null)&&( localStorage.getItem("is_student") == "true")&&(this.navigatedurl == state.url))
+      return (( localStorage.getItem("user") !== null)&&( localStorage.getItem("is_student") == "true")&&(state.url == '/Student/'+btoa(this.user.username).replace("=", "%3D")))
        
   }
 }

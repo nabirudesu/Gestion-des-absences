@@ -1,4 +1,5 @@
 <div id="background"></div> 
+<header><div class="user">Hi {{studentuser}}</div><button class="but-logout" [routerLink]="['/Login']" ><b>Logout</b></button></header>
 <div class="form" >
     
 
@@ -7,7 +8,7 @@
         
       
     <div class="name" >
-            <h5 class="title2">Module</h5> 
+            <h5 class="title2">Teacher</h5> 
     <select class="cus-select"   placeholder="Choose module" [(ngModel)]="Teacher" >   
         <option *ngFor="let teacher of Teachers" [ngValue]="teacher.fullName">{{teacher.fullName}}</option> 
     </select>

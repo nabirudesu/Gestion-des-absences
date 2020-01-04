@@ -19,11 +19,10 @@ export class TeacherService {
      
       success:function(response){
         data = response 
-        console.log(data)
         
       },
       error:function(err){
-        console.log(err)      
+     
       }
     })
     return data
@@ -37,12 +36,10 @@ export class TeacherService {
         "authorization" : `token ${accesstoken}` 
         },
         success:function(response){
-          
-          console.log(response)
-          
+    
         },
         error:function(err){
-          console.log(err)      
+             
         }  
 
     })
@@ -57,12 +54,11 @@ export class TeacherService {
         "authorization" : `token ${accesstoken}` 
         },
         success:function(response){
-          
-          console.log(response)
+    
           
         },
         error:function(err){
-          console.log(err)      
+       
         }  
 
     })
@@ -81,13 +77,17 @@ export class TeacherService {
       contentType: 'application/json',
       success:function(response){
         data = response 
-        console.log(data)
+     
         
       },
       error:function(err){
-        console.log(err)      
+         console.log(err);
+         
       }
     })
     return data
   }
+  
+
 }
+

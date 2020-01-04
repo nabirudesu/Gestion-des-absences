@@ -9,6 +9,19 @@
     display: flex;
     flex-direction: row;
 }
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(117, 74, 48, 0.691);
+    margin: -1rem -1rem -1rem -1rem;
+    padding: 1.5rem 1rem 1rem 2rem;
+    box-shadow: rgb(0, 0, 0) 0px 0px 15px 2px; ;
+
+}
+.user{
+    width: 95%;
+}
+
 #background {
     background-image: url(../../../Pictures/coffee-notebook-writing-computer-34601.jpg);
     background-repeat: no-repeat;
@@ -126,63 +139,7 @@
       border-radius: 10px ;
       
   }
-  .students li.selected{
-    background-color: #CFD8DC;
-    color: white;
-    padding-top: .55rem;
-    padding-bottom: .55rem;
-    margin-left: -2.3rem;
-    margin-right: .2em;
-  }
-  .students li.selected:hover {
-    background-color: #BBD8DC;
-    color: white;
-  }
-  .justification-view{
-    width: 330px;
-    margin-bottom: 1rem;
-    margin-top: 0rem;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 0px 15px 1px;
-    background-color: white;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-
-
-
-    
-  }
-  .details-view{
-      display: flex;
-      flex-direction: row;
-
-  }
-  .fullname2{
-      padding-left: 1rem;
-      padding-top: 1rem;
-      width: 480px;
-      font-size: 80%;
-  }
-  .span-view{
-      padding-top: 1rem;
-      padding-left: 2rem;
-      padding-bottom: 1rem;
-      
-  }
   
-  .justification-text{
-     
-      max-width: 280px;
-      min-width: 280px;
-      max-height: 230px;
-      min-height: 230px;
-      margin-left:25px;
-      margin-bottom: 2rem;
-      border-radius: 5px;
-      border: 1.5px solid rgb(0, 0, 0);
-  }
   .but-login{
    
     background-color:rgb(255, 255, 255);
@@ -203,15 +160,65 @@
    
 
 }
-.but-login:hover{
-    margin-left: .15rem;
-    margin-right: .15rem;
-    margin-top: .2rem;
-    margin-bottom: .7rem;
-    background-color:rgb(255, 255, 255);
+.but-logout1{
+    margin-top:-.5rem;
+    margin-bottom: -.5rem;
+    margin-left: 3rem;
+    background-color: rgb(120, 120, 120);
+    padding: 0.45rem 0.9rem ;
+    color: white;
+    border-top-right-radius: 0rem ;
+    border-bottom-right-radius: 0rem;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
     
-    padding: 0.4rem .7rem ;
-    border-radius: 1rem;
+    border: none;
+    transition: all 250ms ease-in-out;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.but-logout1:hover{
+    margin-top: -.6rem;
+    margin-bottom: -.6rem;
+    margin-left: -0.1rem;
+    margin-right: -.1rem;    
+    
+    padding: 0.55rem 1rem ;
+    border-bottom-left-radius: 1.3rem;
+    border-top-left-radius: 1.3rem;
+    border-top-right-radius: 0rem ;
+    border-bottom-right-radius: 0rem;
+  
+    
+    box-shadow: rgb(0, 0, 0) 2px 2px 35px 2px;
+
+}
+.but-logout{
+    margin-top:-.5rem;
+    margin-bottom: -.5rem;
+    background-color: rgb(120, 120, 120);
+    padding: 0.45rem 0.9rem ;
+    color: white;
+    border-top-left-radius: 0rem ;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border: none;
+    transition: all 250ms ease-in-out;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.but-logout:hover{
+    margin-top: -.6rem;
+    margin-bottom: -.6rem;
+    margin-left: -0.1rem;
+    margin-right: -.1rem;    
+    
+    padding: 0.55rem 1rem ;
+    border-top-left-radius: 0rem ;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 1.3rem;
+    border-top-right-radius: 1.3rem;
   
     
     box-shadow: rgb(0, 0, 0) 2px 2px 35px 2px;
@@ -223,6 +230,51 @@
     flex-direction: column;
     margin-left: 3rem;
 }
+.details-view{
+    display: flex;
+    flex-direction: row;
+
+}
+.fullname2{
+    padding-left: 1rem;
+    padding-top: 1rem;
+    width: 480px;
+    font-size: 80%;
+}
+.span-view{
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    
+}
+
+.justification-text{
+   
+    max-width: 280px;
+    min-width: 280px;
+    max-height: 230px;
+    min-height: 230px;
+    margin-left:25px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 1.5px solid rgb(0, 0, 0);
+}
+.justification-view{
+    width: 330px;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 15px 1px;
+    background-color: white;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+
+
+
+    
+  }
 .justimage{
     width: 290px;
 

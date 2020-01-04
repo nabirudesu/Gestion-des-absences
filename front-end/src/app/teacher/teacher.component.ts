@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../student'
 import { TeacherService } from './teacher.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,22 +16,24 @@ export class TeacherComponent implements OnInit {
   selectedstudent ;
   Justifications  ;
   token ;
+  teacheruser;
 
 
-  constructor(private api:TeacherService) { }
+  constructor(private api:TeacherService , private router:Router) { }
 
   ngOnInit() {
+    
     this.token = localStorage.getItem('token')
     let data ={ 'teacher': JSON.parse(localStorage.getItem('user')).url }
     this.Justifications = this.api.get_justification(data ,this.token )
     this.Justifications.forEach(element => { 
       if(element.teacher ==JSON.parse(localStorage.getItem('user')).url){
       this.STUDENTS.push(this.api.get_students(this.token ,element.student))      
-      console.log(this.api.get_students(this.token ,element.student));
+    
       }
     });
-    console.log(this.STUDENTS);
-    
+
+    this.teacheruser = JSON.parse(localStorage.getItem('user')).fullName
   }
 
   onSelect(stud) : boolean  {
@@ -38,13 +41,15 @@ export class TeacherComponent implements OnInit {
     this.Justifications.forEach(element => {
       if(element.student == this.selectedstudent.url){
         this.selectedjustification = element
-        console.log(this.selectedjustification.image);
-        
-        console.log(this.selectedjustification);
+       
         
       }
     });
     return true;
+  }
+  Students(){
+    let user = JSON.parse(localStorage.getItem('user'))
+    this.router.navigate([`Teacher/Students/`+btoa(user.username)])
   }
   OnDelete(){
     let conf = window.confirm("You want to delete the justification ?")

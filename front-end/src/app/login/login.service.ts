@@ -33,14 +33,7 @@ export class LoginService {
       contentType: 'application/json',
       success:function(response){
         usertoken = response.token
-        console.log(response.token);
-        userauth= true  
-        console.log(userauth);
-           
-        
-        
-        
-        
+        userauth= true        
                 
       },
       error:function(err){
@@ -69,7 +62,6 @@ export class LoginService {
       contentType: 'application/json',
       success:function(response){
         data = response 
-        console.log(data)
         
       },
       error:function(err){
@@ -91,7 +83,7 @@ export class LoginService {
       contentType: 'application/json',
       success:function(response){
         data = response 
-        console.log(data)
+      
         
       },
       error:function(err){
@@ -112,7 +104,7 @@ export class LoginService {
       contentType: 'application/json',
       success:function(response){
         data = response 
-        console.log(data)
+    
         
       },
       error:function(err){

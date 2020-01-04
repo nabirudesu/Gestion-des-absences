@@ -25,9 +25,15 @@ export class CanActivateRouteGuardTeacher implements CanActivate {
   }
   
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    console.log(this.navigatedurl);
+    console.log(this.user);
+    console.log('/Teacher/Students/'+btoa(this.user.username))
+    
+    
+    
   
       
-      if (( localStorage.getItem("user") !== null)&&( localStorage.getItem("is_teacher") == "true")&&(state.url == this.navigatedurl)){
+      if (( localStorage.getItem("user") !== null)&&( localStorage.getItem("is_teacher") == "true")&&((state.url == '/Teacher/Mail/'+btoa(this.user.username).replace("=", "%3D"))||(state.url == '/Teacher/Students/'+btoa(this.user.username).replace("=", "%3D")))){
         return true
       } 
       else

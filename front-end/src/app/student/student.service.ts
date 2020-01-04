@@ -20,11 +20,12 @@ export class StudentService {
      
      
       success:function(response){
-        console.log(response);
+       
         
       }, 
       error:function(error){
         console.log(error);
+        
         
       }
     })
@@ -43,11 +44,12 @@ export class StudentService {
       contentType: 'application/json',
       success:function(response){
         data = response 
-        console.log(data)
+     
         
       },
       error:function(err){
-        console.log(err)      
+           console.log(err);
+           
       }
     })
     return data
