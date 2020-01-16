@@ -35,7 +35,7 @@ class TestDamn():
     self.driver.switch_to.alert.accept()
     self.driver.find_element(By.XPATH, "//button[2]/b").click()
   
-
+#Unittests
 class UserTestCase(TestCase):
     def setUp(self):
         Teacher.objects.create(username="lion", email="roar@esi.dz" , fullName='nabil')
@@ -43,12 +43,13 @@ class UserTestCase(TestCase):
         teacher = Teacher.objects.get(username="lion")
         student = Student.objects.get(username="cat")
         Justification.objects.create(teacher=teacher , student =student , cause='what\'s up', image='')
-
-    def test_teacher_created(self):
+#Created user test
+    def test_user_created(self):
         teacher = Teacher.objects.get(username="lion")
         student = Student.objects.get(username="cat")
         self.assertEqual(teacher.fullName, 'nabil')
         self.assertEqual(student.fullName, 'nabil2')
+#Created justification test
     def test_justification_created(self):
         teacher = Teacher.objects.get(username="lion")
         student = Student.objects.get(username="cat")

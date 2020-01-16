@@ -12,23 +12,24 @@ from django.core.serializers import json
 
 
 # Create your views here.
-
+# Create user view
 class UserViewSet(viewsets.ModelViewSet) :
     
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
-    
+# Create teacher view
 class TeacherViewSet(viewsets.ModelViewSet) :
     queryset = Teacher.objects.all().order_by('id')
     serializer_class = TeacherSerializer
-
+# Create student view
 class StudentViewSet(viewsets.ModelViewSet) :
     queryset = Student.objects.all().order_by('id')
     serializer_class = StudentSerializer
-
+# Create justification view
 class JustificationViewSet(viewsets.ModelViewSet) :
     queryset = Justification.objects.all().order_by('id')
     serializer_class = JustificationSerializer
+# Create justification function
     def post(self , request , *args , **kwargs):
         student = request.data['student']
         teacher = request.data['teacher']

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 
-
+#Teacher model
 class Teacher(models.Model):
 
     username = models.CharField(max_length=255 , default="")
@@ -11,7 +11,7 @@ class Teacher(models.Model):
     def __str__(self):
         return self.fullName
     
-
+#Student model
 class Student(models.Model):
   
     username = models.CharField(max_length=255,default="")
@@ -23,9 +23,11 @@ class Student(models.Model):
     def __str__(self):
         return self.fullName
 
+#Picture upload path
 def upload_path(instance , filename):
     return '/'.join(['justifications',str(instance.teacher.fullName) , filename])
-    
+
+#Justification model   
 class Justification(models.Model):
    
     student = models.ForeignKey(Student, on_delete = models.DO_NOTHING)
