@@ -1,0 +1,14 @@
+<div id="background"></div>
+<header><div class="user">Hi {{teacheruser}}</div><button class="but-logout1" (click)="Students()" ><b>Mail</b></button><button class="but-logout" [routerLink]="['/Login']" ><b>Logout</b></button></header>
+
+<div class="main-container">
+<div class="mail">
+  <div class="title1"><b>Students list</b></div>
+<ul class="students">
+  <li *ngFor="let student of STUDENTS">
+    <div class="fullname">{{student.fullName| uppercase}}&nbsp;&nbsp;&nbsp; Absences : &nbsp;{{student.absences}}</div> <input type='checkbox' [(ngModel)]=student.present>
+  </li>
+</ul>
+</div>
+<div class="button-log"><button class="but-login" (click)="OnConfirm()"><b><a>confirm</a></b></button></div>
+</div>

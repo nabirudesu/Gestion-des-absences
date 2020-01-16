@@ -1,0 +1,21 @@
+<div id="background"></div> 
+<header><div class="user">Hi {{studentuser}}</div><button class="but-logout" [routerLink]="['/Login']" ><b>Logout</b></button></header>
+<div class="form" >
+    
+
+    <div class="img-container"><img class="art" src="../../assets/ESI-logo.svg"></div>
+    <div class="form-container"> 
+        
+      
+    <div class="name" >
+            <h5 class="title2">Teacher</h5> 
+    <select class="cus-select"   placeholder="Choose module" [(ngModel)]="Teacher" >   
+        <option *ngFor="let teacher of Teachers" [ngValue]="teacher.fullName">{{teacher.fullName}}</option> 
+    </select>
+    </div> 
+    <div class="name">  <h5 class="title2">Justification</h5>     <textarea class="text-form" [(ngModel)]="Cause"  placeholder="your Jutification"></textarea></div> 
+    <div class="button-log"><input class="but-login" type="file" (change)="onFileChanged($event)" ></div>
+     
+    <div class="button-log"><button class="but-login" (click)="onSentClick()"><b>Sent</b></button></div>
+    </div>
+</div>  
