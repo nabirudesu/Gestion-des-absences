@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+  dj:
+    container_name: dj
+    build: back-end
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - ./back-end:/code
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS=dev
+  ng:
+    container_name: ng
+    build: front-end
+    ports:
+      - "4200:80"
